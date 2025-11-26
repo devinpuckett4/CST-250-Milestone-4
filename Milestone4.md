@@ -160,48 +160,99 @@ This diagram maps the main interactions in my Minesweeper app across three actor
 
 
 ADD ON
-
 Programming Conventions
-1.	Keep files grouped by what they do. Models hold the data, BLL handles the game rules, and the WinForms app shows the board and reads input.
-2.	Name things clearly and add small comments so future me knows what a method is for.
-3.	The BLL is the brain. The models are storage. The UI only displays and reads from the player.
-4.	Keep methods focused on one job. RevealCell now handles regular visits and calls flood fill when needed. Other methods include SetupBombs, CountBombsNearby, ToggleFlag, UseRewardPeek, and DetermineGameState.
-5.	Check for out-of-bounds or bad input first, then always guide the player with a friendly message.
-Computer Specs 
-• Windows 10 or Windows 11 
-• Visual Studio 2022 • .NET SDK installed 
-• 8 GB RAM or more • Git and GitHub account
-Work Log Milestone 4 Wednesday • 4:00–5:15 PM - Started GUI setup with FormStart and trackbars for size/difficulty Total: 1h 15m
-Wednesday - Discussion Day • Posted about WinForms GUI integration and event handling for clicks Total: 40m
-Friday - Discussion Day • Posted about challenges with dynamic button grids in WinForms Total: 40m
-Friday • 6:15–7:30 PM - Added FormStart for size/difficulty input and FormGame for button grid • 7:40–8:30 PM - Implemented left-click reveal, right-click flag, and refresh logic Total: 1h 45m
-Saturday • 10:00–11:15 AM - Updated UML and flowchart to show GUI forms and connections • 11:30–12:40 PM - Added score calculation on win and disabled grid Total: 2h 25m
-Saturday - Discussion Day • 1:00–1:35 PM - Discussion replies about GUI vs console for user experience Total: 35m
-Sunday • 5:20–6:45 PM - Cleaned comments, retook screenshots, fixed alignment in console • 7:00–7:40 PM - Reviewed build and final test run with passes Total: 2h 05m
-Grand Total: 9h 20m
-What I added 
-• FormStart for choosing size and difficulty with trackbars 
-• FormGame with dynamic button grid, click events for reveal/flag, flood fill on zeros 
-• Score display on win, grid disable, timer stop 
-• Updated UML/flowchart to include GUI forms
-Research
-1.	Facebook
-2.	Candy Crush Saga
-3.	Match-3 Puzzle
-4.	Fun but repetitive; easy at first, hard later.
-5.	Bright and colorful, attractive.
-6.	Use matching mechanics for a future puzzle mode in Minesweeper.
-OOP principles I used • Abstraction - The interface describes what the board service can do 
-• Encapsulation - Data stays in the board and cell classes and the BLL changes it 
-• Polymorphism - Event handlers use the same click method for different actions 
-• Inheritance - Forms inherit from base Form class for UI
-Tests • Three tests passed: GUI reveal, flood fill expansion, and score calculation
-Bug Report • Buttons cutoff on large boards, fixed by scaling cell size
- • Win not disabling clicks, added DisableAllCells method 
-• Timer kept running on win, fixed by stopping it in win block
-Follow-Up Questions
-1.	What was tough? Getting the button grid to scale right for big boards without cutoff.
-2.	What did I learn? WinForms event handling makes mouse interactions smooth, and dynamic sizing keeps the UI clean.
-3.	How would I improve it? Add more difficulty levels or random reward placement.
-4.	How does this help at work? GUI skills make apps more user-friendly, and layering code helps team collaboration.
 
+Keep files grouped by what they do. Models hold the data, BLL handles the game rules, and the WinForms app shows the board and reads input.
+
+Name things clearly and add small comments so future me knows what a method is for.
+
+The BLL is the brain. The models are storage. The UI only displays and reads from the player.
+
+Keep methods focused on one job. RevealCell now handles regular visits and calls flood fill when needed. Other methods include SetupBombs, CountBombsNearby, ToggleFlag, UseRewardPeek, and DetermineGameState.
+
+Check for out-of-bounds or bad input first, then always guide the player with a friendly message.
+
+Computer Specs
+• Windows 10 or Windows 11
+• Visual Studio 2022
+• .NET SDK installed
+• 8 GB RAM or more
+• Git and GitHub account
+
+Work Log Milestone 4
+Wednesday
+• 4:00–5:15 PM - Started GUI setup with FormStart and trackbars for size/difficulty
+Total: 1h 15m
+
+Wednesday - Discussion Day
+• Posted about WinForms GUI integration and event handling for clicks
+Total: 40m
+
+Friday - Discussion Day
+• Posted about challenges with dynamic button grids in WinForms
+Total: 40m
+
+Friday
+• 6:15–7:30 PM - Added FormStart for size/difficulty input and FormGame for button grid
+• 7:40–8:30 PM - Implemented left-click reveal, right-click flag, and refresh logic
+Total: 1h 45m
+
+Saturday
+• 10:00–11:15 AM - Updated UML and flowchart to show GUI forms and connections
+• 11:30–12:40 PM - Added score calculation on win and disabled grid
+Total: 2h 25m
+
+Saturday - Discussion Day
+• 1:00–1:35 PM - Discussion replies about GUI vs console for user experience
+Total: 35m
+
+Sunday
+• 5:20–6:45 PM - Cleaned comments, retook screenshots, fixed alignment in console
+• 7:00–7:40 PM - Reviewed build and final test run with passes
+Total: 2h 05m
+
+Grand Total: 9h 20m
+
+What I added
+• FormStart for choosing size and difficulty with trackbars
+• FormGame with dynamic button grid, click events for reveal/flag, flood fill on zeros
+• Score display on win, grid disable, timer stop
+• Updated UML/flowchart to include GUI forms
+
+Research
+
+Facebook
+
+Candy Crush Saga
+
+Match-3 Puzzle
+
+Fun but repetitive; easy at first, hard later.
+
+Bright and colorful, attractive.
+
+Use matching mechanics for a future puzzle mode in Minesweeper.
+
+OOP principles I used
+• Abstraction - The interface describes what the board service can do
+• Encapsulation - Data stays in the board and cell classes and the BLL changes it
+• Polymorphism - Event handlers use the same click method for different actions
+• Inheritance - Forms inherit from base Form class for UI
+
+Tests
+• Three tests passed: GUI reveal, flood fill expansion, and score calculation
+
+Bug Report
+• Buttons cutoff on large boards, fixed by scaling cell size
+• Win not disabling clicks, added DisableAllCells method
+• Timer kept running on win, fixed by stopping it in win block
+
+Follow-Up Questions
+
+What was tough? Getting the button grid to scale right for big boards without cutoff.
+
+What did I learn? WinForms event handling makes mouse interactions smooth, and dynamic sizing keeps the UI clean.
+
+How would I improve it? Add more difficulty levels or random reward placement.
+
+How does this help at work? GUI skills make apps more user-friendly, and layering code helps team collaboration.
